@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Rutas de archivos compartibles mediante FileProvider para videos grabados -->
+<paths>
+    <external-files-path name="recordings" path="Movies/Recordings" />
+    <external-files-path name="movies" path="Movies" />
+    <files-path name="internal_recordings" path="recordings" />
+</paths>

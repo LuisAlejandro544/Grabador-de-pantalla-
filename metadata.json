@@ -1,0 +1,6 @@
+{
+  "name": "Grabador de Pantalla",
+  "description": "Grabador de pantalla para capturar video y audio del dispositivo con biblioteca de grabaciones y configuración de calidad.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
