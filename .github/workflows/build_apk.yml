@@ -24,12 +24,17 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Configurar Android SDK
-        uses: android-actions/setup-android@v3
+      - name: Configurar variables del Android SDK
+        run: |
+          echo "ANDROID_HOME=/usr/local/lib/android/sdk" >> $GITHUB_ENV
+          echo "ANDROID_SDK_ROOT=/usr/local/lib/android/sdk" >> $GITHUB_ENV
+          echo "/usr/local/lib/android/sdk/cmdline-tools/latest/bin" >> $GITHUB_PATH
+          echo "/usr/local/lib/android/sdk/platform-tools" >> $GITHUB_PATH
 
       - name: Descargar dependencias de C++ (NDK y CMake)
         run: |
-          echo "=== Instalando NDK y CMake 3.22.1 para compilación nativa C++ ==="
+          echo "=== Instalando NDK y CMake para compilación nativa C++ ==="
+          export PATH="/usr/local/lib/android/sdk/cmdline-tools/latest/bin:$PATH"
           yes | sdkmanager --licenses || true
           sdkmanager --install "cmake;3.22.1" "ndk;25.1.8937393" "platforms;android-36" "platforms;android-29" "build-tools;36.0.0"
 
